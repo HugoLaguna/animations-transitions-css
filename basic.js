@@ -28,3 +28,21 @@ function selectSlide(onkey){
         }
     }
 }
+var featured = document.getElementById("keynote");
+if( "ontouchstart" in window ) {
+    var touchStart = function(evt) {
+        var startTime = (new Date()).getTime();
+        var startX = evt.changedTouches[0].pageX;
+        var touchEnd = function(evt) {
+            document.removeEventListener("touchend", touchEnd);
+            var diffX = evt.changedTouches[0].pageX - startX;
+            var elapsed = (new Date()).getTime() - startTime;
+            console.log( "Swiped " + diffX + " pixels in " + elapsed + " milliseconds" );
+            if( elapsed < 200 && Math.abs(diffX) > 50 ) {
+                ( diffX < 0 ) ? slideright() : slideleft();
+            }
+        }
+        document.addEventListener("touchend", touchEnd);
+    };
+    featured.addEventListener("touchstart", touchStart);
+}
