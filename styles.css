@@ -1,7 +1,7 @@
 /* Presentación */
 
 *{margin: 0;padding: 0;box-sizing: border-box;}
-body{overflow: hidden;background-color: #000;font-family: 'Questrial', sans-serif;}
+body{overflow: hidden;background-color: #000;font-family: 'Questrial', sans-serif;max-width: 100vw;}
 .keynote{width: 100vw;height: 100vh;position: relative;animation: show 2s ease 1;}
 .slider{position: absolute;left: 0;top: 0;width: 100%;height: 100%;transition: transform 2s cubic-bezier(.34,-0.51,.33,1.49), opacity 2s ease;opacity: 0;}
 .slider:nth-of-type(2n){background-color: #094109;transform: translateY(-100%) rotate(-60deg);}
