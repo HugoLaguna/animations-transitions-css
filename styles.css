@@ -7,7 +7,7 @@ body{overflow-x: hidden;background-color: #000;font-family: 'Questrial', sans-se
 .slider:nth-of-type(2n){background-color: #094109;transform: translateY(-100%) rotate(-60deg);}
 .slider:nth-of-type(2n+1){background-color: #120532;transform: translateY(-100%) rotate(60deg);}
 .slider:nth-of-type(1){background-color: #300a0a;}
-.slider:nth-of-type(2){background-color: #652c08;}
+.slider:nth-of-type(2){background-color: #652c08; transform: translateY(100%) }
 .slider:nth-of-type(3){transform: translateY(100%) rotate(60deg);}
 .slider:nth-of-type(5){transform: translateY(100%) rotate(60deg);}
 .slider.actived{transform: translateY(0%);opacity: 1;}
