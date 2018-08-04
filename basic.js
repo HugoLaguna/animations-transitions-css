@@ -31,5 +31,5 @@ function selectSlide(onkey){
 function selectSlideLeft(){ selectSlide('ArrowLeft'); }
 function selectSlideRight(){ selectSlide('ArrowRight'); }
 
-document.addEventListener('swipeleft',selectSlideLeft);
-document.addEventListener('swiperight',selectSlideRight);
+document.addEventListener('swipeleft', selectSlideRight);
+document.addEventListener('swiperight',selectSlideLeft);
