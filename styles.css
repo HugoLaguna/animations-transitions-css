@@ -1,0 +1,25 @@
+/* Presentación */
+
+*{margin: 0;padding: 0;box-sizing: border-box;}
+body{overflow: hidden;background-color: #000;font-family: 'Questrial', sans-serif;}
+.keynote{width: 100vw;height: 100vh;position: relative;animation: show 2s ease 1;}
+.slider{position: absolute;left: 0;top: 0;width: 100%;height: 100%;transition: transform 2s cubic-bezier(.34,-0.51,.33,1.49), opacity 2s ease;opacity: 0;}
+.slider:nth-of-type(2n){background-color: #094109;transform: translateY(-100%) rotate(-60deg);}
+.slider:nth-of-type(2n+1){background-color: #120532;transform: translateY(-100%) rotate(60deg);}
+.slider:nth-of-type(1){background-color: #300a0a;}
+.slider:nth-of-type(2){background-color: #652c08;}
+.slider:nth-of-type(3){transform: translateY(100%) rotate(60deg);}
+.slider:nth-of-type(5){transform: translateY(100%) rotate(60deg);}
+.slider.actived{transform: translateY(0%);opacity: 1;}
+.slider p{color: #fff;width: 80%;margin: 0 auto;font-size: 1.5em;}
+.slider h1{color: #fff;padding: 12px;width: 80%;text-align: center;margin: 52px auto;font-size: 3em;}
+.slider p.code{}
+.buttonsSlider{}
+.buttonsSlider button{position: fixed;left: 0;top: 45%;color: #FFF;background-color: transparent;border: none;cursor: pointer;font-size: 2em;z-index: 1;opacity: 0.2;} 
+.buttonsSlider button.left{transform: rotate(-30deg);left: 25px;}
+.buttonsSlider button.right{right: 25px;left: unset;transform: rotate(28deg);}
+
+@keyframes show {
+  from{opacity: 0;}
+  to{opacity: 1}
+}
