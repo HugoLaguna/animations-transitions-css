@@ -19,25 +19,84 @@
         <button class="right" onclick="selectSlide('ArrowRight')">  &#62; </button>
     </div>
     <div id="presentacion" class="keynote">
-            <div class="slider actived"  name="sliders" >
-                    <h1>
-                        Animaciones con CSS
-                    </h1>
-                    <p>  ¿ Por que usamos JQuery para hacer animaciones ?   </p>
-                    <img src="/images/medellincss.png" class="icon-card">
-                    <span> Hugo Laguna Rueda </span>
-                </div>
-        <div class="slider contrast bottom"  name="sliders" style="background-image: url(/images/cine.jpg)">
+    <div class="slider actived"  name="sliders" >
             <h1>
-                Las Transiciones! 
+            Introduccion
             </h1>
-            <p> El mundo como lo conociamos cambio cuando saltamos de las fotografias
-                al video </p>
+            <p class="  "> 
+                <b>Hugo Stiven Laguna</b>
+                <br>
+                Diseñaor y Desarrollador Front-End
+                <br>
+                <i> PHP </i> <i> ASP.Net </i> <i> C# </i> <i> Angular </i> <i> CSS </i>
+                <br>
+                Fotografia, Viajar, Pasar tiempo con mi familia, Futbol.
+
+            </p>
+            <img src="images/medellincss.png" class="icon-card">
+            <span> @HugoLaguna </span>
+        </div>
+        <div class="slider "  name="sliders" >
+            <h1>
+                Historia
+            </h1>
+            <p class="middle"> CSS3 permitio cambiar la manera en que el navegador muestra un cambio de estilos de un elemento HTML, al darnos la posibilidad de graduar esta transición  </p>
+            <div class="middle"> 
+                    <style>
+                    .boton-animated-basic {
+                        margin: 20px auto;
+                        width: 60px;
+                        background-color: #07bca9;
+                        color: #fff;
+                        background-image: url(https://s3.amazonaws.com/marketplaces.buyruru.com/images/carita-3.png);
+                        background-repeat: no-repeat;
+                        background-position-y: 50px;
+                        background-position-x: 86%;
+                        transition: all 500ms ease;
+                        background-size: auto 147%;
+                        border-top-left-radius: 0px;
+                        border-bottom-left-radius: 0px;
+                        display: block;
+                        height: 85px;
+                        border-radius: 9px;
+                        animation: boton-basic 4s steps(1) infinite;
+                    }
+                    .boton-active-animated{
+                        animation: boton-basic 4s ease infinite;
+                    }
+                    @keyframes boton-basic{
+                        0%{
+                            width: 60px;
+                            background-color: #07bca9;
+                            background-position-y: 50px;
+                        }
+                        50%{
+                            background-color: #003348;
+                            width: 150px;
+                            background-position-y: -35px;
+                        }
+                    }
+                    </style>   
+                    <input type="button" class="boton-animated-basic boton-active-animated">
+                    <input type="button" class="boton-animated-basic ">
+
+            </div>
+            <span> codePen <a href="https://codepen.io/hugolaguna/pen/vzYKBG"> link </a></span>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+               Animaciones en CSS
+            </h1>
+            <p class="middle">  ¿ Por que usamos JQuery para hacer animaciones ?   </p>
+            <div class="compare middle">
+                <img src="images/JqueryVSCSS.png" />
+                <img src="images/CSSVSJquery.png" />
+           </div>
             
         </div>
         <div class="slider"  name="sliders">
             <h1>
-                Diferencia entre animación y Transición
+                Transiciones y animaciones
             </h1>
             <img src="images/lomismo.jpg" class="grande">
             
@@ -46,8 +105,8 @@
             <h1>
                 Diferencia entre animación y Transición
             </h1>
-            <p >  <b>transition</b>   nos permite determinar la forma en que una o varias propiedades cambian su valor de manera progresiva </p><p>
-            <b>animation:   </b> nos permite ejecutar el cambio de una o varias propiedad de manera secuencial </p>
+            <p >  <b>transition</b>   nos permite <i>determinar</i> la forma en que una o varias propiedades cambian su valor de manera <i>progresiva</i> </p><p>
+            <b>animation:   </b> nos permite <i>ejecutar</i> el cambio de una o varias propiedad de manera <i>secuencial</i> </p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
@@ -67,8 +126,11 @@
         </div>
         <div class="slider"  name="sliders">
             <h1>
-                transition-delay
+                transition-duration
             </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                adipisicing elit. Magnam, laboriosam ea voluptatum 
+                magni possimus necessitatibus minima cum</p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
@@ -80,7 +142,99 @@
         </div>
         <div class="slider"  name="sliders">
             <h1>
-                transition-property
+                cubic-bazier
+            </h1>
+            <p> cubic-bezier.com/ </p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                transition-delay
+            </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Magnam, laboriosam ea voluptatum 
+                    magni possimus necessitatibus minima cum</p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                Propiedades de 'animation'
+            </h1>
+            <p >  animation: name duration timing-function delay iteration-count direction fill-mode play-state; </p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                @keyframes 
+            </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Magnam, laboriosam ea voluptatum 
+                    magni possimus necessitatibus minima cum</p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                animation-name 
+            </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Magnam, laboriosam ea voluptatum 
+                    magni possimus necessitatibus minima cum</p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                animation-duration 	 
+            </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Magnam, laboriosam ea voluptatum 
+                    magni possimus necessitatibus minima cum</p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                animation-timing-function 	 
+            </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Magnam, laboriosam ea voluptatum 
+                    magni possimus necessitatibus minima cum</p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                animation-delay 	 
+            </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Magnam, laboriosam ea voluptatum 
+                    magni possimus necessitatibus minima cum</p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                animation-iteration-count	 
+            </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Magnam, laboriosam ea voluptatum 
+                    magni possimus necessitatibus minima cum</p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                animation-direction 	
+            </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Magnam, laboriosam ea voluptatum 
+                    magni possimus necessitatibus minima cum</p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                animation-fill-mode 	
+            </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Magnam, laboriosam ea voluptatum 
+                    magni possimus necessitatibus minima cum</p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                animation-play-state 	
+            </h1>
+            <p > Lorem ipsum dolor sit amet consectetur 
+                    adipisicing elit. Magnam, laboriosam ea voluptatum 
+                    magni possimus necessitatibus minima cum</p>
+        </div>
+        <div class="slider"  name="sliders">
+            <h1>
+                Transform	
             </h1>
             <p > Lorem ipsum dolor sit amet consectetur 
                     adipisicing elit. Magnam, laboriosam ea voluptatum 
