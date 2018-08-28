@@ -106,140 +106,195 @@
                 Diferencia entre animación y Transición
             </h1>
             <p >  <b>transition</b>   nos permite <i>determinar</i> la forma en que una o varias propiedades cambian su valor de manera <i>progresiva</i> </p><p>
-            <b>animation:   </b> nos permite <i>ejecutar</i> el cambio de una o varias propiedad de manera <i>secuencial</i> </p>
+            <b>animation:   </b> nos permite <i>ejecutar</i> el cambio de una o varias propiedades de manera <i>secuencial</i> </p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
-                Propiedades de ´transition´
+                Transition
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p >   
+                <b> transition: </b> { property } { duration }  { timing-function } { delay } .<br>
+                <b> Valores por defecto: </b>  { all } { 0s } { ease } { 0 }
+        </p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
                 transition-property
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p >    Especifica la o las propiedades que tendrán un efecto de Transición , <br>
+                    Permite el uso de varios valores separado por comas, para llamar todas las
+                    Propiedades de utilza ‘all’.  </p>
+            <span> Propiedad compatibles con Animation y Transition →  <a href=""> aqui </a> o  <a href=""> aqui </a>
+                </span>
         </div>
         <div class="slider"  name="sliders">
             <h1>
                 transition-duration
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Magnam, laboriosam ea voluptatum 
-                magni possimus necessitatibus minima cum</p>
+            <p > Determina cuánto tiempo durará el efecto de transición en terminar<br>
+                    Permite el uso de varios valores separado por comas, <br> permite valores 
+                    Numericos en Segundos (s) o Milesimas (ms).</p>
         </div>
+        <div class="slider"  name="sliders">
+                <h1>
+                    transition-delay
+                </h1>
+                <p > Especificamos cuanto tiempo tarda en comenzar la transición.
+                        Recibe numéricos en Segundos (s) o Milésimas (ms). </p>
+                
+    
+            </div>
+
         <div class="slider"  name="sliders">
             <h1>
                 transition-timing-function
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p > Especifica la curva de velocidad que tendrá el efecto de transición, 
+                    Permite el uso de varios valores reparado por comas </p><p>
+                    Esta propiedad recibe  funciones como cubic-bezier() o steps().</p><p>
+                    También recibe en algunos navegador frames() pero se considera
+                    ya obsoleta esta función. 
+            </p>
+            <span>http://blog.teamtreehouse.com/css-sprite-sheet-animations-steps </span>
+
+        </div>
+
+
+        <div class="slider"  name="sliders">
+                <h1>
+                        Cubic-bezier (x1, y1, x2, y2)
+                </h1>
+                <p> Se denomina curvas de Bézier a un sistema para el trazado de dibujos técnicos.
+                     Su denominación es en honor a 
+                        Pierre Bézier, quien ideó un método de descripción matemática de las curvas que 
+                        se comenzó a utilizar con éxito en los programas de CAD </p>
+                <img src="images/cubic.png">
+                        
+                
+            </div>
+        <div class="slider"  name="sliders">
+                <h1>
+                        Cubic-bezier (x1, y1, x2, y2)
+                </h1>
+                <p> Podemos utilizar valores ya cargados Linear; Ease; Ease-in; Ease-out; ease-in-out;
+                        los navegadores también nos permiten editar el cubic-bezier(). Podemos crear efectos 
+                        de rebote poniendo valores menores a 0 en Y1 y valores mayores a 1 en Y2. los valores
+                        de X siempre deben ser positivos y nunca mayor a 1. Tiempo siempre debe ser progresivo. </p>
+                        
+                        <span>http://cubic-bezier.com/</span>
+            </div>
+            <div class="slider"  name="sliders">
+                    <h1>
+                            Steps( number, start|end ):
+                    </h1>
+                    <p>   al igual que lo hace frames(), especificamos cuantos pasos ( fotogramas o frames ) son y los saltos serán inmediatos entre cada uno, es utilizado mucho para hacer películas con sprites, además podemos determinar la dirección de la animación.
+                            Tiene dos valores cargados step-start [ steps( 1 , start ) ] & step-end [ steps( 1 , end ) ]     </p>
+                            
+                    
+                </div>
+      
+        <div class="slider"  name="sliders">
+            <h1>
+                Animation
+            </h1>
+            <p >  animation: { name } { duration } { timing-function } { delay } { iteration-count } { direction } { fill-mode } { play-state }
+                </p>
+                <p >  Valores por defecto:  { none } { 0s } { ease } { 0s } { 1 }  { normal } { none } { running }
+                    </p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
-                cubic-bazier
+                @keyframes  ( puntos de trayectoria )
             </h1>
-            <p> cubic-bezier.com/ </p>
-        </div>
-        <div class="slider"  name="sliders">
-            <h1>
-                transition-delay
-            </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
-        </div>
-        <div class="slider"  name="sliders">
-            <h1>
-                Propiedades de 'animation'
-            </h1>
-            <p >  animation: name duration timing-function delay iteration-count direction fill-mode play-state; </p>
-        </div>
-        <div class="slider"  name="sliders">
-            <h1>
-                @keyframes 
-            </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p > esta regla permite declarar un animación [ @keyframes identifier {} ]. Dentro del kayframe podemos controlar los pasos intermedios de una secuencia de animación. Contiene una lista de selectores ( porcentajes 0% a 100% ó from | to que son iguales a 0% y 100%).
+                </p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
                 animation-name 
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p > Especificamos el nombre identificador del @keyframe , permite insertar varios
+                 @keyframes separados por coma.  
+                </p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
                 animation-duration 	 
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p > Igual que en Transition. </p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
                 animation-timing-function 	 
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p > Igual que en transition-timing-function.  Pero su aplicación necesita más interpretaciòn.
+                </p>
+            <img src="images/image2.png">
         </div>
         <div class="slider"  name="sliders">
             <h1>
                 animation-delay 	 
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p > Igual que en Transition. </p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
                 animation-iteration-count	 
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p >  definimos cuántas veces se le repetirá la animación, recibe valores
+                numericos y permite el valor ´infinite’ .
+                </p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
                 animation-direction 	
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p > Parecido a los que hacíamos con steps( ) podemos determinar la dirección de la animación ,
+                 por donde de comenzar , por donde acabar y en caso de tener repeticiones, donde comenzar 
+                 la repetición.</p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
                 animation-fill-mode 	
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p > Especifica qué propiedades debe tener el objeto cuando la animación no está en reproducción. 
+                </p>
+                <p> <b> none </b> no aplica ningún estilo diferente a los que tiene el objeto fuera del @keyframe. 
+                </p>
+                <p> <b>forwards</b> El elemento retiene los estilos con lo que terminó la animación en caso de que tenga fin la animación. 
+                    </p>
+                <p> <b>backwards</b> El elemento obtiene los valores que se le asignan inicialmente en la animación incluso si tiene un ‘delay’, pero depende de la dirección de la animación.
+                    </p>
+                <p><b> both </b> aplica los valores de ‘forwards & backwards’ y aplica para cualquier dirección. 
+                    </p>
         </div>
         <div class="slider"  name="sliders">
             <h1>
                 animation-play-state 	
             </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
+            <p > especifica el estado de la animación, pero su valor no es dinámico como tal, en CSS así ya 
+                lleguemos al 100% de la animación y no tenga mas repeticiones,  no significa para esta 
+                propiedad que la animación está detenida.  Sus valores son paused y running</p>
         </div>
         <div class="slider"  name="sliders">
-            <h1>
-                Transform	
-            </h1>
-            <p > Lorem ipsum dolor sit amet consectetur 
-                    adipisicing elit. Magnam, laboriosam ea voluptatum 
-                    magni possimus necessitatibus minima cum</p>
-        </div>
+                <h1>
+                    Como reiniciar animaciones  	
+                </h1>
+                <p > Quitando la clase que contiene ‘animation’ y volviendo a asignarla en JS. </p>
+                <p >    Cambiando el valor por ‘none’ y  luego por ‘’ a  ‘animation-name’ (webkitAnimation ) en JS. </p>
+                <p >    Utilizando pseudo elementos y sus eventos para cambia los valores de la propiedad animation del elemento animado CSS.
+                       </p>
+            </div>
+            <div class="slider"  name="sliders">
+                    <h1>
+                            Transform:  	
+                    </h1>
+                    <p > Sirve para transforma el elemento libremente a través de sus vértices. </p>
+                    <p > Puede ser afectado por diferentes transformaciones separadas por un espacio.  </p>
+                    <p >  Los traslados de los elementos por medio de Transform no afecta ningún elemento a su alrededor por que se renderiza en una capa diferente del documento.                </p>
+                    <p> Depende de los valores de transform-origin, transform-style & perspective . La posición del elemento también puede alterar el resultado de la transformación por ejemplo 
+                        position:absolute por qué sus límites pueden llegar a ser abstractos. <a href="https://codepen.io/vineethtr/pen/XKKEgM"> link</a> </p>
+                </div>
     </div>
 </body>
 
