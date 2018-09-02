@@ -105,6 +105,10 @@ body .page .teoria .sliders.AniAndTrans .column-2:last-of-type {
 body .page .teoria .sliders.AniAndTrans .column-2 h2 {
   margin: 15px auto;
 }
+body .page .teoria .sliders.AniAndTrans .column-2 h3 {
+  opacity: 0.9;
+  font-weight: bold;
+}
 body .page .teoria .sliders.AniAndTrans .column-2 p {
   font-size: 1.3em;
   margin: 6px auto;
