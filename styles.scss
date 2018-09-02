@@ -1,0 +1,201 @@
+%middleAlign{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+// Colores
+$grey : #5e5e5e;
+
+body{
+    overflow: hidden;
+    font-family: 'Questrial', sans-serif;
+    font-size: 18px;
+    line-height: 1.2em;
+    &, *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    h1{ margin: 15px auto; line-height: 1.1em;}
+    .steps{
+        opacity: 0;
+        transition: opacity .2s ease;
+    }
+    &[step-state='1']{
+        .step1{ opacity: 1;  .fateIn{ animation: fateInOrange .5s ease 1;}}
+    }
+    &[step-state='2']{
+        .step1{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1;}}
+        .step2{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1;}}
+    }
+    &[step-state='3']{
+        .step1{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1;}}
+        .step2{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1;}}
+        .step3{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1;}}
+    }
+    .page{
+        position: relative;
+        .teoria{
+            @extend %middleAlign;
+            background-color: #4f5765;
+            color:white;
+            min-height: 100vh;
+            height: 100%;
+            .sliders{
+                padding: 20px;
+                min-height: 100vh;
+                border-bottom: 1px solid rgb(245, 176, 28);
+                img{
+                    max-width: 100%;
+                }
+                &.historyCSS{
+                    text-align: center;
+                   
+                    img{
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        max-width: 300px;
+                        margin: 0 auto;
+                        transition: transform .5s ease;
+                    }
+                    &.active{
+                        img:first-of-type{
+                            transform: translateX(50vw) translateY(110px);
+                        }
+                        img:last-of-type{
+                            transform: translateY(-100px);
+                        }
+                    }
+                }
+                &.AniAndTrans{
+
+                    .column-2{
+                        width: 50%;
+                        position: absolute;
+                        text-align: center;
+                        &:last-of-type{
+                            right: 0;
+                            color: #2f2f2f;
+                        }
+                        h2{
+                            margin: 15px auto;
+                        }
+                        p{
+                            font-size: 1.3em;
+                            margin: 6px auto;
+                            width: 80%;
+                            border: 1px solid #c58d1d;
+                            border-radius: 10px;
+                            padding: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        .ejercicio{
+            background-color: white;
+            @extend %middleAlign;
+            position: relative;
+            .marco{
+                padding: 25px;
+                width: 50%;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                right: 0;
+                opacity: 1;
+                transition: opacity 1s ease;
+                > div{
+                    border: 1px solid #f6f6f6;
+                    margin: 1%;
+                    display: inline-block;
+                    padding: 10px;
+                    text-align: center;
+                    background-color: #5e5e5e;
+                    border-radius: 10px;
+                    box-shadow: 0 0 5px #2f2f2f;
+                    transition: transform .2s ease;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                    &.header-box, &.content-foot-box{
+                        width: 97%;
+                        height: 90px;
+                        background-color: #028090;
+                    }
+                   &.footer-box{
+                        width: 97%;
+                        height: 50px;
+                        background-color: #7e7e7e;
+                    }
+                    &.sider-box{
+                        width: 27%;
+                        height: 260px;
+                        background-color: #EE4061;
+                    }
+                    &.content-box{
+                        width: 67%;
+                        height: 260px;
+                        background-color: #01A896;
+                    }
+                }
+            }
+            [pt-state='0'], [pt-state='1'], [pt-state='2']{
+                opacity: 0;
+            }
+            $estates : ( 0 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                        ( 1 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                         ( 2 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                          ( 3 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                           ( 4 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                            ( 5 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                             ( 6 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),;
+
+            @each  $nameSlide, $header-ani, $header-trans,
+                $content-ani, $content-trans, $footer-ani, $footer-trans,
+                $cont-foot-ani, $cont-foot-trans, $sider-ani, $sider-trans
+                in $estates  {
+                .marco[pt-state='#{$nameSlide}']{
+                    &:before{
+                        content: '#{$nameSlide}';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 100px;
+                    }
+                    > div{
+                        &.header-box{
+                            animation: #{$header-ani};
+                            transition: #{$header-trans};
+                        }
+                        &.content-foot-box{
+                            animation: #{$cont-foot-ani};
+                            transition: #{$cont-foot-trans};
+                        }
+                        &.footer-box{
+                            animation: #{$footer-ani};
+                            transition: #{$footer-trans};
+                        }
+                        &.sider-box{
+                            animation: #{$sider-ani};
+                            transition: #{$sider-trans};
+                        }
+                        &.content-box{
+                            animation: #{$content-ani};
+                            transition: #{$content-trans};
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}
+
+// Animations
+
+@keyframes fateInOrange{
+    from{ background-color: #c58d1d; }
+    to{ background-color: transparent; }
+}

@@ -1,57 +1,225 @@
-/* Presentación */
-
-*{margin: 0;padding: 0;box-sizing: border-box;}
-*::selection{background-color: rgba(0,0,0,0)}
-body{overflow-x: hidden;background-color: #CCC;font-family: 'Questrial', sans-serif;max-width: 100vw; color: #222;        }
-.keynote{width: 100vw;height: 100vh;position: relative;animation: show 2s ease 1;overflow: hidden;}
-.slider{position: absolute;left: 0;top: 0;width: 100%;height: 100%;transition: transform 2s cubic-bezier(.34,-0.51,.33,1.49), opacity 2s ease;opacity: 0;background-repeat: no-repeat;background-position-x: center;background-position-y: center;padding: 10px;}
-.slider.contrast{color: #000;}
-.slider:nth-of-type(2n){transform: translateY(-100%); }
-.slider:nth-of-type(2n+1){transform: translateY(100%);}
-.slider:nth-of-type(1){}
-.slider:nth-of-type(2){ transform: translateY(100%); }
-.slider:nth-of-type(3){transform: translateY(100%); }
-.slider:nth-of-type(5){transform: translateY(100%); }
-.slider.actived{transform: translateY(0%);opacity: 1;}
-.slider p:before{content: '';/*! bo rder: 1px solid #000; */width: 102%;height: 104%;position: absolute;left: 10px;top: -7px;z-index: -1;background-color: rgba(255, 255, 255, 0.86);transform: scale(1);border-radius: 8px;border-right: 2px solid #8693cb;border-bottom: 2px solid #8693cb;}
-.slider p{width: 80%;margin: 12px auto;font-size: 1.5em;border: 1px solid #252525;padding: 18px;border-radius: 6px;text-align: justify;position: relative;}
-.slider p i{background-color: rgba(8, 117, 98, 0.5);padding: 6px;margin: 5px;line-height: 2em;border-radius: 20px 0 22px 0;}
-.slider.actived p:before{animation: flotando 3s ease 1;animation-direction: alternate;animation-fill-mode: forwards;}
-.slider.contrast p{color: #000;background-color: rgba(255, 255, 255, 0.75);}
-.slider span{display: block;margin: 0 auto;width: 100%;text-align: center;color: #eee;position: absolute;bottom: 34px;}
-.slider p b{letter-spacing: 1px; font-size: 1.2em;margin-right: 10px;}
-.slider h1{padding: 12px;width: 80%;text-align: center;margin: 52px auto 30px auto;font-size: 3em;transition: transform 3s ease;transform: translateY(-60px);}
-.slider.contrast h1{color: #000;background-color: #cfcfcf;border-radius: 13px;}
-.slider.actived h1{transform: translateY(0px);}
-.slider img{height: 42%;margin: 0 auto;display: block;}
-.slider img.grande{height: 60%;}
-.slider img.icon-card{height: 75px;border-radius: 13px;margin-top: 80px;}
-.slider p.code{}
-.slider .middle{width: 50%;display: inline-block;vertical-align: middle;margin-right: -4px;}
-.slider a{text-decoration: none;color: #969696;}
-.slider a:after{content:'...'; margin-left: -2px;}
-
-.slider .compare img{width: 128px;height: auto;display: inline-block;vertical-align: top;}
-.slider .compare{text-align: center;}
-.buttonsSlider{} 
-.slider.bottom p{margin: 38% auto 0 auto;}
-
-.buttonsSlider button{position: fixed;left: 0;bottom: 30px;color: #FFF;background-color: transparent;border: none;cursor: pointer;font-size: 2em;z-index: 1;opacity: 0.2;} 
-.buttonsSlider button.left{left: 25px;}
-.buttonsSlider button.right{right: 25px;left: unset;}
-
-@keyframes show {
-  from{opacity: 0;}
-  to{opacity: 1}
+body .page .ejercicio, body .page .teoria {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
 }
 
-@keyframes flotando{
-  0%{transform: scale(0.5);}
-  100%{transform: scale(1.02);}
+body {
+  overflow: hidden;
+  font-family: "Questrial", sans-serif;
+  font-size: 18px;
+  line-height: 1.2em;
 }
-@media all and (max-width:768px){
-  body{font-size: 9px;}
-  .slider.actived h1{margin: 5px auto;}
-  .slider img{height: auto;max-height: 27vh;}
-  .slider img.grande{height: auto; max-height: 48vh;}
+body, body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+body h1 {
+  margin: 15px auto;
+  line-height: 1.1em;
+}
+body .steps {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+body[step-state="1"] .step1 {
+  opacity: 1;
+}
+body[step-state="1"] .step1 .fateIn {
+  animation: fateInOrange 0.5s ease 1;
+}
+body[step-state="2"] .step1 {
+  opacity: 1;
+}
+body[step-state="2"] .step1 .fateIn {
+  animation: fateInOrange 0.5s ease 1;
+}
+body[step-state="2"] .step2 {
+  opacity: 1;
+}
+body[step-state="2"] .step2 .fateIn {
+  animation: fateInOrange 0.5s ease 1;
+}
+body[step-state="3"] .step1 {
+  opacity: 1;
+}
+body[step-state="3"] .step1 .fateIn {
+  animation: fateInOrange 0.5s ease 1;
+}
+body[step-state="3"] .step2 {
+  opacity: 1;
+}
+body[step-state="3"] .step2 .fateIn {
+  animation: fateInOrange 0.5s ease 1;
+}
+body[step-state="3"] .step3 {
+  opacity: 1;
+}
+body[step-state="3"] .step3 .fateIn {
+  animation: fateInOrange 0.5s ease 1;
+}
+body .page {
+  position: relative;
+}
+body .page .teoria {
+  background-color: #4f5765;
+  color: white;
+  min-height: 100vh;
+  height: 100%;
+}
+body .page .teoria .sliders {
+  padding: 20px;
+  min-height: 100vh;
+  border-bottom: 1px solid #f5b01c;
+}
+body .page .teoria .sliders img {
+  max-width: 100%;
+}
+body .page .teoria .sliders.historyCSS {
+  text-align: center;
+}
+body .page .teoria .sliders.historyCSS img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin: 0 auto;
+  transition: transform 0.5s ease;
+}
+body .page .teoria .sliders.historyCSS.active img:first-of-type {
+  transform: translateX(50vw) translateY(110px);
+}
+body .page .teoria .sliders.historyCSS.active img:last-of-type {
+  transform: translateY(-100px);
+}
+body .page .teoria .sliders.AniAndTrans .column-2 {
+  width: 50%;
+  position: absolute;
+  text-align: center;
+}
+body .page .teoria .sliders.AniAndTrans .column-2:last-of-type {
+  right: 0;
+  color: #2f2f2f;
+}
+body .page .teoria .sliders.AniAndTrans .column-2 h2 {
+  margin: 15px auto;
+}
+body .page .teoria .sliders.AniAndTrans .column-2 p {
+  font-size: 1.3em;
+  margin: 6px auto;
+  width: 80%;
+  border: 1px solid #c58d1d;
+  border-radius: 10px;
+  padding: 5px;
+}
+body .page .ejercicio {
+  background-color: white;
+  position: relative;
+}
+body .page .ejercicio .marco {
+  padding: 25px;
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+body .page .ejercicio .marco > div {
+  border: 1px solid #f6f6f6;
+  margin: 1%;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  background-color: #5e5e5e;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #2f2f2f;
+  transition: transform 0.2s ease;
+}
+body .page .ejercicio .marco > div:hover {
+  transform: scale(1.1);
+}
+body .page .ejercicio .marco > div.header-box, body .page .ejercicio .marco > div.content-foot-box {
+  width: 97%;
+  height: 90px;
+  background-color: #028090;
+}
+body .page .ejercicio .marco > div.footer-box {
+  width: 97%;
+  height: 50px;
+  background-color: #7e7e7e;
+}
+body .page .ejercicio .marco > div.sider-box {
+  width: 27%;
+  height: 260px;
+  background-color: #EE4061;
+}
+body .page .ejercicio .marco > div.content-box {
+  width: 67%;
+  height: 260px;
+  background-color: #01A896;
+}
+body .page .ejercicio [pt-state="0"], body .page .ejercicio [pt-state="1"], body .page .ejercicio [pt-state="2"] {
+  opacity: 0;
+}
+body .page .ejercicio .marco[pt-state="0"]:before {
+  content: "0";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+body .page .ejercicio .marco[pt-state="1"]:before {
+  content: "1";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+body .page .ejercicio .marco[pt-state="2"]:before {
+  content: "2";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+body .page .ejercicio .marco[pt-state="3"]:before {
+  content: "3";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+body .page .ejercicio .marco[pt-state="4"]:before {
+  content: "4";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+body .page .ejercicio .marco[pt-state="5"]:before {
+  content: "5";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+body .page .ejercicio .marco[pt-state="6"]:before {
+  content: "6";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+@keyframes fateInOrange {
+  from {
+    background-color: #c58d1d;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
