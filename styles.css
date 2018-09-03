@@ -9,6 +9,8 @@ body {
   font-family: "Questrial", sans-serif;
   font-size: 18px;
   line-height: 1.2em;
+  min-width: 800px;
+  min-height: 600px;
 }
 body, body * {
   margin: 0;
@@ -23,12 +25,23 @@ body h1 {
   line-height: 1.1em;
 }
 body .steps {
-  opacity: 0;
+  opacity: 0.12;
   transition: opacity 0.2s ease;
 }
 body .mini-photo {
   width: 60%;
   margin: 0 auto;
+}
+body .teoria img {
+  transition: all 1.3s ease;
+  transform-origin: bottom;
+  box-shadow: 0 0 0px rgba(255, 255, 255, 0);
+}
+body .teoria img:active {
+  transform: scale(1.4) translateX(15vw) translateY(5%) !important;
+  z-index: 1;
+  border-radius: 15px;
+  box-shadow: 0 0 165px 149px white;
 }
 body .buttonsSlider button {
   position: fixed;
@@ -96,7 +109,6 @@ body[slide-state="3"][step-state="1"] .page .ejercicio .marco > div {
 }
 body[slide-state="4"] .page .ejercicio .marco > div {
   transition: all 1s ease 0s;
-  position: relative;
 }
 body[slide-state="4"] .page .ejercicio .marco > div:hover {
   background-color: #c58d1d;
@@ -130,7 +142,6 @@ body[slide-state="4"] .page .ejercicio .marco .content-foot-box::before {
 }
 body[slide-state="7"] .page .ejercicio .marco > div, body[slide-state="6"] .page .ejercicio .marco > div, body[slide-state="5"] .page .ejercicio .marco > div {
   transition: all 1s ease 0s;
-  position: relative;
 }
 body[slide-state="7"] .page .ejercicio .marco > div:hover, body[slide-state="6"] .page .ejercicio .marco > div:hover, body[slide-state="5"] .page .ejercicio .marco > div:hover {
   background-color: #c58d1d;
@@ -214,12 +225,13 @@ body[slide-state="7"] .page .ejercicio .marco .content-foot-box::before {
   content: "step-start";
 }
 body[slide-state="9"] .page .ejercicio .marco .content-box {
-  position: relative;
+  height: 180px;
+  width: 187px;
   background-color: #fff;
   background-image: url(images/luigi.png);
   background-size: auto 100%;
   background-position-x: 0%;
-  transition: background-position-x 0.1s steps(2);
+  transition: all 0.1s steps(2);
 }
 body[slide-state="9"] .page .ejercicio .marco .content-box::before {
   content: "steps()";
@@ -227,6 +239,23 @@ body[slide-state="9"] .page .ejercicio .marco .content-box::before {
   top: 0;
 }
 body[slide-state="9"] .page .ejercicio .marco .content-box:hover {
+  background-position-x: 100%;
+}
+body[slide-state="9"] .page .ejercicio .marco .sider-box {
+  height: 180px;
+  width: 180px;
+  background-color: #fff;
+  background-image: url(images/luigi.png);
+  background-size: auto 100%;
+  background-position-x: 0%;
+  transition: all 0.5s linear;
+}
+body[slide-state="9"] .page .ejercicio .marco .sider-box::before {
+  content: "linear";
+  color: #000;
+  top: 0;
+}
+body[slide-state="9"] .page .ejercicio .marco .sider-box:hover {
   background-position-x: 100%;
 }
 body[slide-state="10"][step-state="1"] .page .ejercicio .marco > div {
@@ -243,6 +272,78 @@ body[slide-state="10"][step-state="1"] .page .ejercicio .marco .content-box {
 }
 body[slide-state="10"][step-state="1"] .page .ejercicio .marco .content-foot-box {
   animation-direction: reverse;
+}
+body[slide-state="11"][step-state="1"] .page .ejercicio .marco .sider-box {
+  animation: animation-test-1 1s ease infinite alternate both;
+}
+body[slide-state="11"][step-state="1"] .page .ejercicio .marco .content-box {
+  animation: identifier 1s ease infinite alternate both;
+}
+body[slide-state="12"][step-state="1"] .page .ejercicio .marco .content-box, body[slide-state="12"][step-state="2"] .page .ejercicio .marco .content-box {
+  height: 230px;
+  width: 231px;
+  background-color: #fff;
+  background-image: url(images/luigi.png);
+  background-size: auto 100%;
+  background-position-x: 0%;
+  animation: luigi 0.3s steps(3, start) infinite;
+}
+body[slide-state="12"] .page .teoria .anim-luigi img:last-of-type {
+  opacity: 0;
+}
+body[slide-state="12"][step-state="2"] .page .teoria .anim-luigi img:last-of-type, body[slide-state="12"][step-state="3"] .page .teoria .anim-luigi img:last-of-type {
+  transform: translateY(-34vh) scale(1.4) translateX(6vw);
+  border-radius: 13px;
+  z-index: 1;
+  border: 1px solid #333;
+  opacity: 1;
+}
+body[slide-state="12"][step-state="3"] .page .ejercicio .marco .content-box {
+  height: 230px;
+  width: 233px;
+  background-color: #fff;
+  background-image: url(images/luigi.png);
+  background-size: auto 100%;
+  background-position-x: 0%;
+  animation: luigi-2 0.2s steps(1) infinite alternate;
+}
+body[slide-state="13"][step-state="3"] .page .ejercicio .marco > div {
+  opacity: 0.2;
+}
+body[slide-state="13"][step-state="3"] .page .ejercicio .marco .content-box {
+  top: 20px;
+  left: 20px;
+  opacity: 1;
+  background-color: #429cd8;
+  position: relative;
+  animation: raaara 5s ease 4s infinite normal;
+}
+body[slide-state="14"][step-state="1"] .page .ejercicio .marco > div {
+  animation: animation-test-1 1s ease infinite normal;
+}
+body[slide-state="14"][step-state="1"] .page .ejercicio .marco .header-box {
+  animation-iteration-count: 2;
+}
+body[slide-state="14"][step-state="1"] .page .ejercicio .marco .header-box::before {
+  content: "2";
+}
+body[slide-state="14"][step-state="1"] .page .ejercicio .marco .sider-box {
+  animation-iteration-count: 4;
+}
+body[slide-state="14"][step-state="1"] .page .ejercicio .marco .sider-box::before {
+  content: "4";
+}
+body[slide-state="14"][step-state="1"] .page .ejercicio .marco .content-box {
+  animation-iteration-count: 6;
+}
+body[slide-state="14"][step-state="1"] .page .ejercicio .marco .content-box::before {
+  content: "6";
+}
+body[slide-state="14"][step-state="1"] .page .ejercicio .marco .content-foot-box {
+  animation-iteration-count: infinite;
+}
+body[slide-state="14"][step-state="1"] .page .ejercicio .marco .content-foot-box::before {
+  content: "infinite";
 }
 body .page {
   position: relative;
@@ -268,22 +369,24 @@ body .page .teoria .sliders.historyCSS {
 }
 body .page .teoria .sliders.historyCSS img {
   display: block;
-  width: 100%;
+  width: 90%;
   height: auto;
   margin: 0 auto;
   max-width: 450px;
-  transition: transform 0.5s ease;
+  transition: opacity 0.5 ease, transform 0.5s ease;
 }
 @media all and (max-width: 900px) {
   body .page .teoria .sliders.historyCSS img {
     max-width: 300px;
   }
 }
+body .page .teoria .sliders.historyCSS img:first-of-type {
+  opacity: 0;
+  position: absolute;
+}
 body .page .teoria .sliders.historyCSS.active img:first-of-type {
   transform: translateX(50vw) translateY(100px);
-}
-body .page .teoria .sliders.historyCSS.active img:last-of-type {
-  transform: translateY(-120px);
+  opacity: 1;
 }
 body .page .teoria .sliders.AniAndTrans .column-2 {
   width: 50%;
@@ -319,10 +422,12 @@ body .page .teoria .sliders.cubic-bez .toRight {
   position: absolute;
   width: 45vw;
   transform: translateY(-200px);
-  transition: transform 0.5s ease 0s;
+  transition: opacity 0.5 ease, transform 0.5s ease 0s;
+  opacity: 0;
 }
 body .page .teoria .sliders.cubic-bez.active .toRight {
   transform: translateX(40vw) translateY(-200px);
+  opacity: 1;
 }
 body .page .ejercicio {
   background-color: white;
@@ -340,16 +445,25 @@ body .page .ejercicio .marco {
   transition: opacity 1s ease, opacity 1s ease, visibility 1s ease;
   padding-top: calc(50vh - 202px);
 }
+body .page .ejercicio .marco:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  font-weight: bolder;
+  opacity: 0.2;
+}
 body .page .ejercicio .marco > div {
   border: 1px solid #f6f6f6;
   margin: 1%;
   display: inline-block;
+  position: relative;
   padding: 10px;
   text-align: center;
   background-color: #5e5e5e;
   border-radius: 10px;
   box-shadow: 0 0 5px #2f2f2f;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
 }
 body .page .ejercicio .marco > div:before {
   position: absolute;
@@ -383,90 +497,52 @@ body .page .ejercicio [pt-state="0"], body .page .ejercicio [pt-state="1"], body
   opacity: 0;
   visibility: hidden;
 }
-body .page .ejercicio .marco[pt-state="0"]:before {
-  content: "0";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
-}
 body .page .ejercicio .marco[pt-state="1"]:before {
   content: "1";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
 body .page .ejercicio .marco[pt-state="2"]:before {
   content: "2";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
 body .page .ejercicio .marco[pt-state="3"]:before {
   content: "3";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
 body .page .ejercicio .marco[pt-state="4"]:before {
   content: "4";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
 body .page .ejercicio .marco[pt-state="5"]:before {
   content: "5";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
 body .page .ejercicio .marco[pt-state="6"]:before {
   content: "6";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
 body .page .ejercicio .marco[pt-state="7"]:before {
   content: "7";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
 body .page .ejercicio .marco[pt-state="8"]:before {
   content: "8";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
 body .page .ejercicio .marco[pt-state="9"]:before {
   content: "9";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
 body .page .ejercicio .marco[pt-state="10"]:before {
   content: "10";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
 body .page .ejercicio .marco[pt-state="11"]:before {
   content: "11";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
 }
+body .page .ejercicio .marco[pt-state="12"]:before {
+  content: "12";
+}
+body .page .ejercicio .marco[pt-state="13"]:before {
+  content: "13";
+}
+body .page .ejercicio .marco[pt-state="14"]:before {
+  content: "14";
+}
+body .page .ejercicio .marco[pt-state="15"]:before {
+  content: "15";
+}
+
 @keyframes fateInOrange {
   from {
     background-color: transparent;
@@ -491,6 +567,64 @@ body .page .ejercicio .marco[pt-state="11"]:before {
     background-color: #c51da9;
     transform: scale(1);
     opacity: 1;
+  }
+}
+@keyframes identifier {
+  from {
+    background-color: #F0F;
+  }
+  to {
+    background-color: #FF0;
+  }
+}
+@keyframes animation-test-1 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+@keyframes raaara {
+  0% {
+    left: 20px;
+    background-color: #429cd8;
+  }
+  25% {
+    top: 20px;
+    background-color: #217ebd;
+  }
+  50% {
+    left: 0px;
+    top: 40px;
+    background-color: #155885;
+  }
+  75% {
+    left: 50px;
+    background-color: #0d3f61;
+  }
+  90% {
+    top: 10px;
+    background-color: #061a27;
+  }
+}
+@keyframes luigi {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 150% 0%;
+  }
+}
+@keyframes luigi-2 {
+  0% {
+    background-position: 0% 0%;
+  }
+  33% {
+    background-position: 50% 0%;
+  }
+  66% {
+    background-position: 100% 0%;
   }
 }
 
