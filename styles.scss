@@ -7,6 +7,7 @@
 // Colores
 $grey : #5e5e5e;
 $orange : rgb(245, 176, 28);
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:700|Roboto:900|Russo+One');
 
 body{
     overflow: hidden;
@@ -34,6 +35,7 @@ body{
         margin: 0 auto;
     }
     .teoria{
+        box-shadow: 0 0 9px #606060;
         img{
             transition: all 1.3s ease;
             transform-origin: bottom ;
@@ -44,6 +46,9 @@ body{
                 border-radius: 15px;
                 box-shadow:  0 0 165px 149px rgba(255,255,255,1);
             }
+        }
+        p{
+            margin: 5px auto;
         }
     }
         
@@ -299,6 +304,101 @@ body{
             }
         }
     }
+    &[slide-state='17']{
+        &[step-state='1']{
+            .page .ejercicio .marco{
+                > div {
+                    animation:  animation-test-1  2.5s ease infinite; 
+                }
+                .sider-box{ &::before{content:'running'; } animation-play-state: running; }
+                .content-box{ 
+                    &::before{content:'pause'; } 
+                    animation-play-state: paused;
+                    &:hover{
+                        &::before{content:'running'; } 
+                        animation-play-state: running;
+                    }
+                }
+                .header-box, .content-foot-box{animation: none;}
+            }
+        }
+    }
+    &[slide-state='15']{
+        &[step-state='1']{
+            .page .ejercicio .marco{
+                > div {
+                    animation:  animation-test-2 2.5s ease infinite; 
+                }
+                .header-box{ &::before{content:'alternate';} animation-direction: alternate; }
+                .sider-box{ &::before{content:'normal'; } animation-direction: normal; }
+                .content-box{ &::before{content:'reverse'; }  animation-direction: reverse; }
+                .content-foot-box{ &::before{content:'alternate-reverse';} animation-direction: alternate-reverse; }
+            }
+        }
+    }
+    &[slide-state='16']{
+        &[step-state='1']{
+            .page .ejercicio .marco{
+                > div {
+                    animation:  animation-test-2 2.5s ease infinite; 
+                }
+                .header-box{ &::before{content:'alternate';} animation-direction: alternate; }
+                .sider-box{ &::before{content:'normal'; } animation-direction: normal; }
+                .content-box{ &::before{content:'reverse'; }  animation-direction: reverse; }
+                .content-foot-box{ &::before{content:'alternate-reverse';} animation-direction: alternate-reverse; }
+            }
+        }
+    }
+    &[slide-state='18']{
+        .page .teoria .final{
+            .text {
+                 opacity: 0;
+                 transform: translateX(20vw) translateY(-42%);
+                 margin-left: -30px;
+                 height: 70vh;
+                 width: 100vw;
+                }
+        }
+        &:not([step-state='0']){
+            .page .teoria .final{
+                .text {
+                    opacity: 1;
+                    p {
+                    opacity: 0;
+                    margin-top:50vh;
+                    width: 50px;
+                    display: inline-block;
+                    font-size: 0px;
+                    font-family: 'Russo One';
+                    font-weight: 900;
+                    color:#ffd800;
+                    }
+                    $color: rgb(68, 126, 85);
+                    
+                    @function makelongshadow($color) {
+                        $val: 0px 0px $color;
+                        @for $i from 1 through 300 {
+                            $val: #{$val}, #{$i}px #{$i}px #{$color};
+                        }
+                        @return $val;
+                        }
+
+                    @for $i from 1 to 10 {
+                        p:nth-child(#{$i}) { 
+                        text-shadow: makelongshadow(adjust-hue($color, $i * 30));
+                        animation: showup 5s infinite $i * 0.20s; 
+                        opacity: 1;}
+                    }
+                
+                }
+            }
+        }
+    }
+    
+
+  
+  
+
     .page{
         position: relative;
         .teoria{
@@ -316,6 +416,13 @@ body{
                 }
                 span{
                     font-size: 0.8em;
+                }
+                &.intro{
+                    .icon-card{
+                        width: 60%;
+                        display: block;
+                        border-radius: 10px;
+                    }
                 }
                 &.historyCSS{
                     text-align: center;
@@ -456,12 +563,12 @@ body{
                     }
                 }
             }
-            [pt-state='0'], [pt-state='1'], [pt-state='2'], [pt-state='8']{
+            [pt-state='0'], [pt-state='1'], [pt-state='2'], [pt-state='8'], [pt-state='18']{
                 opacity: 0;
                 visibility: hidden;
                
             }
-            $estates : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15;
+            $estates : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19;
 
             @each  $nameSlide in $estates  {
                 .marco[pt-state='#{$nameSlide}']{
@@ -496,6 +603,11 @@ to{ background-color: #FF0; }
 100%{ transform: scale(1.2); }
 }
 
+@keyframes animation-test-2 {
+    0%{ transform: scale(0.8) translateX(25vw); }
+    100%{ transform: scale(1.2) translateX(0vw); }
+    }
+
 @keyframes raaara{
     0%{left: 20px; background-color: #429cd8;}
     25%{top: 20px;background-color: #217ebd;}
@@ -514,4 +626,32 @@ to{ background-color: #FF0; }
     33%{background-position: 50% 0%;}
     66%{background-position: 100% 0%;}
 }
+    
+
+@keyframes showup {
+    0% {
+      font-size:0px;
+      transform:rotate(90deg);
+    }
+    5% {
+      font-size:60px;
+      
+    }
+    10% {
+      font-size:77px;
+      transform:rotate(0deg);
+    }
+    60% {
+      font-size:77px;
+      opacity: 1; 
+    }
+    71% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      font-size:77px;
+      transform:rotate(0deg);
+    }
+  }
         

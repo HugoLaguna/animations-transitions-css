@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body id="pt-global">
     <div class="buttonsSlider">
         <button class="left" onclick="selectSlide('ArrowLeft')">  &#60; </button>
         <button class="right" onclick="selectSlide('ArrowRight')">  &#62; </button>
@@ -23,29 +23,28 @@
         <div class="teoria">
 
             <div class="sliders intro" name="sliders">
-                <h1> Introduccion </h1>
+                <h1> Animaciones y Transiciones </h1>
                 <p class="  "> 
-                <b>Hugo Stiven Laguna</b>
+                <b>Hugo  Laguna</b>
                 <br>
                 Diseñaor y Desarrollador Front-End
                 <br>
                 <i> PHP </i> <i> CSS </i>
-                <br>
-                Fotografia, Viajar, Pasar tiempo con mi familia, Futbol.
                 </p>
                 <img src="images/medellincss.png" class="icon-card">
+                
                 <span> @HugoLaguna </span>
             </div>
 
             <div class="sliders historyCSS" name="sliders">
                 <h1> Old Border Rounded </h1>
-                <img src="images/border-redondos.png" click="selectSlide('ArrowDown')">
-                <img src="images/border-old.png" click="selectSlide('ArrowDown')">
+                <img src="images/border-redondos.png" onclick="selectSlide('ArrowDown')">
+                <img src="images/border-old.png" onclick="selectSlide('ArrowDown')">
             </div>
 
             <div class="sliders AniAndTrans" name="sliders">
                 <h1> Diferencias </h1>
-                <div class="column-2" click="selectSlide('ArrowDown')">
+                <div class="column-2" onclick="selectSlide('ArrowDown')">
                     <h2> Transicion </h2>
                     <div class="step1 steps"> 
                         <h3> Tipo </h3>
@@ -81,32 +80,36 @@
             <div class="sliders transition" name="sliders">
                 <h1> Transition </h1>
                 <div>
-                    <img src="images/transition.png" click="selectSlide('ArrowDown')">
+                    <img src="images/transition.png" onclick="selectSlide('ArrowDown')">
                     <img src="images/transition-one.png" class="step1 steps">
                 </div>
             </div>
             <div class="sliders trans-property" name="sliders">
                 <h1>  transition-property </h1>
+                <p> nombre de propiedades que tendrán un efecto de Transición </p>
                 <img src="images/trans-property.png">
                 <span> Propiedad compatibles con Animation y Transition <a href="">→ </a>
                 </span>
             </div>
             <div class="sliders" name="sliders">
                 <h1>  transition-duration </h1>
+                <p> duración del efecto de transición </p>
                 <img src="images/trans-duration.png">
             </div>
             <div class="sliders" name="sliders">
                 <h1>  transition-delay </h1>
+                <p> Retardo de inico de transición</p>
                 <img src="images/trans-delay.png">
             </div>
             <div class="sliders" name="sliders">
                 <h1>  transition-timing-function </h1>
+                <p> Curvatura de Tiempo </p>
                 <img src="images/trans-timing.png">
             </div>
             <div class="sliders cubic-bez" name="sliders">
                 <h2>  Cubic-bezier (x1, y1, x2, y2) </h2>
                 <br>
-                <p> Curvatura de Tiempo </p>
+                <p> Sistema de Curvas cúbica</p>
                 <img class="mini-photo" src="images/cubic-2.png">
                 <br>
                 <img class="toRight" src="images/cubic.png">
@@ -121,38 +124,83 @@
             <div class="sliders" name="sliders">
                 <h1> Animation  </h1>
                 <img src="images/animation.png">
-                <img src="images/animation-one.png" class="step1 steps " click="selectSlide('ArrowDown')">
+                <img src="images/animation-one.png" class="step1 steps " onclick="selectSlide('ArrowDown')">
             </div>
             <div class="sliders " name="sliders">
                 <h1>  @keyframes  </h1>
                 <p> puntos de trayectoria = secuencia de animación </p>
-                <img src="images/animation-name.png" class="step1 steps " click="selectSlide('ArrowDown')">
+                <img src="images/animation-name.png" class="step1 steps " onclick="selectSlide('ArrowDown')">
             </div>
             <div class="sliders anim-luigi" name="sliders">
                 <h1> animation-name </h1>
-                <img src="images/animation-name-luigi.png" class="step1 steps " click="selectSlide('ArrowDown')">
-                <img src="images/luigi-animation.jpg" class="steps step2" click="selectSlide('ArrowDown')">
+                <p> identificador del @keyframe </p>
+                <img src="images/animation-name-luigi.png" class="step1 steps " onclick="selectSlide('ArrowDown')">
+                <img src="images/luigi-animation.jpg" class="steps step2" onclick="selectSlide('ArrowDown')">
             </div>
             <div class="sliders" name="sliders">
                 <h1> = Transition</h1>
                 <h2 class="step1 steps "> animation-duration </h2>
                 <h2 class="step2 steps"> animation-delay </h2>
                 <h2 class="step3 steps"> animation-timing-function </h2>
-                <img src="images/image2.png" class="toRight step3 steps" click="selectSlide('ArrowDown')" >
+                <img src="images/image2.png" class="toRight step3 steps" onclick="selectSlide('ArrowDown')" >
                 
             </div>
             <div class="sliders" name="sliders">
                 <h1> animation-iteration-count </h1>
-                <img class="step1 steps " src="images/animation-iteration.png" click="selectSlide('ArrowDown')">
+                <img class="step1 steps " src="images/animation-iteration.png" onclick="selectSlide('ArrowDown')">
             </div>
             <div class="sliders" name="sliders">
                 <h1> animation-direction </h1>
+                <p > Parecido a los que hacíamos con steps( ) podemos determinar la dirección de la animación ,
+                    por donde comenzar , por donde acabar y en caso de tener repeticiones, donde comenzar 
+                    la repetición.</p>
+                    <img src="images/animation-dir.png" class="step1 steps " >
             </div>
             <div class="sliders" name="sliders">
                 <h1> animation-fill-mode </h1>
+                <p > Especifica qué propiedades debe tener el objeto cuando la animación no está en reproducción. 
+                </p>
+               <img src="images/animation-fill.png" class="step1 steps " >
             </div>
             <div class="sliders" name="sliders">
                 <h1> animation-play-state  </h1>
+                <p > especifica el estado de la animación, pero su valor no es dinámico. </p>
+                <img src="images/animation-play.png" class="step1 steps " >
+            </div>
+            <div class="sliders final" name="sliders">
+                    <h1> transform  </h1>
+                    <p> Ejemplos by @vineethtr  <a href="https://codepen.io/vineethtr/pen/XKKEgM" target="_blank"> link</a></p>
+                    <h1> Animaciones </h1>
+                    <p> Recursos by @cssanimista @AnaTrava <a href="http://animista.net/?utm_source=medellinCSS" target="_blank"> link</a></p>
+                    <div class="text">
+                            <p>
+                            T
+                            </p>
+                            <p>
+                            H
+                            </p>
+                            <p>
+                            A
+                            </p>
+                            <p>
+                            N
+                            </p>
+                            <p>
+                            K
+                            </p>
+                            <p>
+                            &nbsp;
+                            </p>
+                            <p>
+                            Y
+                            </p>
+                            <p>
+                            0
+                            </p>
+                            <p>
+                            U
+                            </p>
+                    </div>
             </div>
 
 
@@ -168,6 +216,25 @@
     </div>
     <script>
     _.goToElement(_.ByID('page'));
+    var counter = 0;
+
+    function scrollGO(numbera){
+        counter = counter + numbera;
+        if(counter > 50){
+            selectSlide('ArrowRight');
+            counter = 0;
+        }else if(counter < -50){
+            selectSlide('ArrowLeft');
+            counter = 0;
+        }
+    }
+
+    document.addEventListener("DOMMouseScroll", function(event){
+        scrollGO(event.detail)
+    });
+    document.addEventListener("scroll",function(event){
+        scrollGO(event.detail)
+    });
     </script>
 </body>
 </html>
