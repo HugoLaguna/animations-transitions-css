@@ -30,6 +30,25 @@ body .mini-photo {
   width: 60%;
   margin: 0 auto;
 }
+body .buttonsSlider button {
+  position: fixed;
+  left: 0;
+  bottom: 30px;
+  color: #fd6601;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2em;
+  z-index: 1;
+  opacity: 0.4;
+}
+body .buttonsSlider button.left {
+  left: 25px;
+}
+body .buttonsSlider button.right {
+  right: 25px;
+  left: unset;
+}
 body[step-state="1"] .step1 {
   opacity: 1;
 }
