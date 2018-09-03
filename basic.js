@@ -42,6 +42,7 @@ function selectSlide(onkey){
                 _.ByID('examples').setAttribute('pt-state', controlSlide);
                 controlStep = 0;
                 document.body.setAttribute('step-state', controlStep);
+                document.body.setAttribute('slide-state', controlSlide);
             }else if(onkey=='ArrowRight' &&  controlSlide < _.ByNames('sliders').length-1 ){
                 _.ByNames('sliders')[controlSlide].classList.remove('active');
                 controlSlide++;
@@ -50,6 +51,7 @@ function selectSlide(onkey){
                 _.ByID('examples').setAttribute('pt-state', controlSlide);
                 controlStep = 0;
                 document.body.setAttribute('step-state', controlStep);
+                document.body.setAttribute('slide-state', controlSlide);
             }
             
         }

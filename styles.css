@@ -15,49 +15,215 @@ body, body * {
   padding: 0;
   box-sizing: border-box;
 }
+body a {
+  color: #fff;
+}
 body h1 {
-  margin: 15px auto;
+  margin: 10px auto;
   line-height: 1.1em;
 }
 body .steps {
   opacity: 0;
   transition: opacity 0.2s ease;
 }
+body .mini-photo {
+  width: 60%;
+  margin: 0 auto;
+}
 body[step-state="1"] .step1 {
   opacity: 1;
 }
 body[step-state="1"] .step1 .fateIn {
-  animation: fateInOrange 0.5s ease 1;
+  animation: fateInOrange 0.5s ease 1 forwards;
 }
 body[step-state="2"] .step1 {
   opacity: 1;
 }
 body[step-state="2"] .step1 .fateIn {
-  animation: fateInOrange 0.5s ease 1;
+  animation: fateInOrange 0.5s ease 1 forwards;
 }
 body[step-state="2"] .step2 {
   opacity: 1;
 }
 body[step-state="2"] .step2 .fateIn {
-  animation: fateInOrange 0.5s ease 1;
+  animation: fateInOrange 0.5s ease 1 forwards;
 }
 body[step-state="3"] .step1 {
   opacity: 1;
 }
 body[step-state="3"] .step1 .fateIn {
-  animation: fateInOrange 0.5s ease 1;
+  animation: fateInOrange 0.5s ease 1 forwards;
 }
 body[step-state="3"] .step2 {
   opacity: 1;
 }
 body[step-state="3"] .step2 .fateIn {
-  animation: fateInOrange 0.5s ease 1;
+  animation: fateInOrange 0.5s ease 1 forwards;
 }
 body[step-state="3"] .step3 {
   opacity: 1;
 }
 body[step-state="3"] .step3 .fateIn {
-  animation: fateInOrange 0.5s ease 1;
+  animation: fateInOrange 0.5s ease 1 forwards;
+}
+body[slide-state="3"] .page .ejercicio .marco > div {
+  transition: none;
+}
+body[slide-state="3"] .page .ejercicio .marco > div:hover {
+  transform: scale(1.1);
+}
+body[slide-state="3"][step-state="1"] .page .ejercicio .marco > div {
+  transition: transform 0.2s ease;
+}
+body[slide-state="4"] .page .ejercicio .marco > div {
+  transition: all 1s ease 0s;
+  position: relative;
+}
+body[slide-state="4"] .page .ejercicio .marco > div:hover {
+  background-color: #c58d1d;
+  transform: scale(1.5);
+  opacity: 0.5;
+  z-index: 1;
+}
+body[slide-state="4"] .page .ejercicio .marco .header-box {
+  transition-property: background-color;
+}
+body[slide-state="4"] .page .ejercicio .marco .header-box::before {
+  content: "background";
+}
+body[slide-state="4"] .page .ejercicio .marco .sider-box {
+  transition-property: transform;
+}
+body[slide-state="4"] .page .ejercicio .marco .sider-box::before {
+  content: "transform";
+}
+body[slide-state="4"] .page .ejercicio .marco .content-box {
+  transition-property: opacity;
+}
+body[slide-state="4"] .page .ejercicio .marco .content-box::before {
+  content: "opacity";
+}
+body[slide-state="4"] .page .ejercicio .marco .content-foot-box {
+  transition-property: all;
+}
+body[slide-state="4"] .page .ejercicio .marco .content-foot-box::before {
+  content: "all";
+}
+body[slide-state="7"] .page .ejercicio .marco > div, body[slide-state="6"] .page .ejercicio .marco > div, body[slide-state="5"] .page .ejercicio .marco > div {
+  transition: all 1s ease 0s;
+  position: relative;
+}
+body[slide-state="7"] .page .ejercicio .marco > div:hover, body[slide-state="6"] .page .ejercicio .marco > div:hover, body[slide-state="5"] .page .ejercicio .marco > div:hover {
+  background-color: #c58d1d;
+  transform: scale(1.5);
+  opacity: 0.5;
+  z-index: 1;
+}
+body[slide-state="5"] .page .ejercicio .marco .header-box {
+  transition-duration: 1s;
+}
+body[slide-state="5"] .page .ejercicio .marco .header-box::before {
+  content: "1s";
+}
+body[slide-state="5"] .page .ejercicio .marco .sider-box {
+  transition-duration: 2s;
+}
+body[slide-state="5"] .page .ejercicio .marco .sider-box::before {
+  content: "2s";
+}
+body[slide-state="5"] .page .ejercicio .marco .content-box {
+  transition-duration: 3s;
+}
+body[slide-state="5"] .page .ejercicio .marco .content-box::before {
+  content: "3s";
+}
+body[slide-state="5"] .page .ejercicio .marco .content-foot-box {
+  transition-duration: 4s;
+}
+body[slide-state="5"] .page .ejercicio .marco .content-foot-box::before {
+  content: "4s";
+}
+body[slide-state="6"] .page .ejercicio .marco .header-box {
+  transition-delay: 1s;
+}
+body[slide-state="6"] .page .ejercicio .marco .header-box::before {
+  content: "1s";
+}
+body[slide-state="6"] .page .ejercicio .marco .sider-box {
+  transition-delay: 2s;
+}
+body[slide-state="6"] .page .ejercicio .marco .sider-box::before {
+  content: "2s";
+}
+body[slide-state="6"] .page .ejercicio .marco .content-box {
+  transition-delay: 3s;
+}
+body[slide-state="6"] .page .ejercicio .marco .content-box::before {
+  content: "3s";
+}
+body[slide-state="6"] .page .ejercicio .marco .content-foot-box {
+  transition-delay: 0.5s;
+}
+body[slide-state="6"] .page .ejercicio .marco .content-foot-box::before {
+  content: "4s - .5s";
+}
+body[slide-state="6"] .page .ejercicio .marco .content-foot-box:hover {
+  transition-delay: 4s;
+}
+body[slide-state="7"] .page .ejercicio .marco .header-box {
+  transition-timing-function: linear;
+}
+body[slide-state="7"] .page .ejercicio .marco .header-box::before {
+  content: "linear";
+}
+body[slide-state="7"] .page .ejercicio .marco .sider-box {
+  transition-timing-function: ease;
+}
+body[slide-state="7"] .page .ejercicio .marco .sider-box::before {
+  content: "ease";
+}
+body[slide-state="7"] .page .ejercicio .marco .content-box {
+  transition-timing-function: cubic-bezier(0.37, -0.72, 0.74, 1.52);
+}
+body[slide-state="7"] .page .ejercicio .marco .content-box::before {
+  content: "cubic-bezier(.37,-0.72,.74,1.52)";
+}
+body[slide-state="7"] .page .ejercicio .marco .content-foot-box {
+  transition-timing-function: step-start;
+}
+body[slide-state="7"] .page .ejercicio .marco .content-foot-box::before {
+  content: "step-start";
+}
+body[slide-state="9"] .page .ejercicio .marco .content-box {
+  position: relative;
+  background-color: #fff;
+  background-image: url(images/luigi.png);
+  background-size: auto 100%;
+  background-position-x: 0%;
+  transition: background-position-x 0.1s steps(2);
+}
+body[slide-state="9"] .page .ejercicio .marco .content-box::before {
+  content: "steps()";
+  color: #000;
+  top: 0;
+}
+body[slide-state="9"] .page .ejercicio .marco .content-box:hover {
+  background-position-x: 100%;
+}
+body[slide-state="10"][step-state="1"] .page .ejercicio .marco > div {
+  animation: electro 2s linear 0.1s infinite normal both;
+}
+body[slide-state="10"][step-state="1"] .page .ejercicio .marco .header-box {
+  animation-delay: 0.5s;
+}
+body[slide-state="10"][step-state="1"] .page .ejercicio .marco .sider-box {
+  animation-duration: 3s;
+}
+body[slide-state="10"][step-state="1"] .page .ejercicio .marco .content-box {
+  animation-direction: alternate;
+}
+body[slide-state="10"][step-state="1"] .page .ejercicio .marco .content-foot-box {
+  animation-direction: reverse;
 }
 body .page {
   position: relative;
@@ -69,12 +235,14 @@ body .page .teoria {
   height: 100%;
 }
 body .page .teoria .sliders {
-  padding: 20px;
+  padding: 15px;
   min-height: 100vh;
-  border-bottom: 1px solid #f5b01c;
 }
 body .page .teoria .sliders img {
   max-width: 100%;
+}
+body .page .teoria .sliders span {
+  font-size: 0.8em;
 }
 body .page .teoria .sliders.historyCSS {
   text-align: center;
@@ -83,15 +251,20 @@ body .page .teoria .sliders.historyCSS img {
   display: block;
   width: 100%;
   height: auto;
-  max-width: 300px;
   margin: 0 auto;
+  max-width: 450px;
   transition: transform 0.5s ease;
 }
+@media all and (max-width: 900px) {
+  body .page .teoria .sliders.historyCSS img {
+    max-width: 300px;
+  }
+}
 body .page .teoria .sliders.historyCSS.active img:first-of-type {
-  transform: translateX(50vw) translateY(110px);
+  transform: translateX(50vw) translateY(100px);
 }
 body .page .teoria .sliders.historyCSS.active img:last-of-type {
-  transform: translateY(-100px);
+  transform: translateY(-120px);
 }
 body .page .teoria .sliders.AniAndTrans .column-2 {
   width: 50%;
@@ -108,14 +281,29 @@ body .page .teoria .sliders.AniAndTrans .column-2 h2 {
 body .page .teoria .sliders.AniAndTrans .column-2 h3 {
   opacity: 0.9;
   font-weight: bold;
+  margin: 5px auto;
 }
 body .page .teoria .sliders.AniAndTrans .column-2 p {
   font-size: 1.3em;
   margin: 6px auto;
   width: 80%;
-  border: 1px solid #c58d1d;
+  border: 1px solid #f5b01c;
   border-radius: 10px;
   padding: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+body .page .teoria .sliders.cubic-bez {
+  text-align: center;
+}
+body .page .teoria .sliders.cubic-bez .toRight {
+  position: absolute;
+  width: 45vw;
+  transform: translateY(-200px);
+  transition: transform 0.5s ease 0s;
+}
+body .page .teoria .sliders.cubic-bez.active .toRight {
+  transform: translateX(40vw) translateY(-200px);
 }
 body .page .ejercicio {
   background-color: white;
@@ -129,7 +317,9 @@ body .page .ejercicio .marco {
   top: 0;
   right: 0;
   opacity: 1;
-  transition: opacity 1s ease;
+  visibility: visible;
+  transition: opacity 1s ease, opacity 1s ease, visibility 1s ease;
+  padding-top: calc(50vh - 202px);
 }
 body .page .ejercicio .marco > div {
   border: 1px solid #f6f6f6;
@@ -142,12 +332,17 @@ body .page .ejercicio .marco > div {
   box-shadow: 0 0 5px #2f2f2f;
   transition: transform 0.2s ease;
 }
-body .page .ejercicio .marco > div:hover {
-  transform: scale(1.1);
+body .page .ejercicio .marco > div:before {
+  position: absolute;
+  top: 40%;
+  color: #fff;
+  height: 40px;
+  width: 100%;
+  left: 0;
 }
 body .page .ejercicio .marco > div.header-box, body .page .ejercicio .marco > div.content-foot-box {
   width: 97%;
-  height: 90px;
+  height: 70px;
   background-color: #028090;
 }
 body .page .ejercicio .marco > div.footer-box {
@@ -157,16 +352,17 @@ body .page .ejercicio .marco > div.footer-box {
 }
 body .page .ejercicio .marco > div.sider-box {
   width: 27%;
-  height: 260px;
+  height: 230px;
   background-color: #EE4061;
 }
 body .page .ejercicio .marco > div.content-box {
   width: 67%;
-  height: 260px;
+  height: 230px;
   background-color: #01A896;
 }
-body .page .ejercicio [pt-state="0"], body .page .ejercicio [pt-state="1"], body .page .ejercicio [pt-state="2"] {
+body .page .ejercicio [pt-state="0"], body .page .ejercicio [pt-state="1"], body .page .ejercicio [pt-state="2"], body .page .ejercicio [pt-state="8"] {
   opacity: 0;
+  visibility: hidden;
 }
 body .page .ejercicio .marco[pt-state="0"]:before {
   content: "0";
@@ -217,12 +413,65 @@ body .page .ejercicio .marco[pt-state="6"]:before {
   right: 0;
   width: 100px;
 }
+body .page .ejercicio .marco[pt-state="7"]:before {
+  content: "7";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+body .page .ejercicio .marco[pt-state="8"]:before {
+  content: "8";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+body .page .ejercicio .marco[pt-state="9"]:before {
+  content: "9";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+body .page .ejercicio .marco[pt-state="10"]:before {
+  content: "10";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
+body .page .ejercicio .marco[pt-state="11"]:before {
+  content: "11";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+}
 @keyframes fateInOrange {
   from {
-    background-color: #c58d1d;
+    background-color: transparent;
   }
   to {
-    background-color: transparent;
+    background-color: #c58d1d;
+    color: #fff;
+  }
+}
+@keyframes electro {
+  25% {
+    background-color: #1f76b1;
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    background-color: #c58d1d;
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    background-color: #c51da9;
+    transform: scale(1);
+    opacity: 1;
   }
 }
 

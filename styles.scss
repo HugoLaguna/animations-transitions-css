@@ -6,6 +6,7 @@
 
 // Colores
 $grey : #5e5e5e;
+$orange : rgb(245, 176, 28);
 
 body{
     overflow: hidden;
@@ -17,22 +18,161 @@ body{
         padding: 0;
         box-sizing: border-box;
     }
-    h1{ margin: 15px auto; line-height: 1.1em;}
+    a{
+        color: #fff;
+    }
+    h1{ margin: 10px auto; line-height: 1.1em;}
     .steps{
         opacity: 0;
         transition: opacity .2s ease;
     }
+    .mini-photo{
+        width: 60%;
+        margin: 0 auto;
+    }
     &[step-state='1']{
-        .step1{ opacity: 1;  .fateIn{ animation: fateInOrange .5s ease 1;}}
+        .step1{ opacity: 1;  .fateIn{ animation: fateInOrange .5s ease 1 forwards;}}
+      
     }
     &[step-state='2']{
-        .step1{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1;}}
-        .step2{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1;}}
+        .step1{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1 forwards;}}
+        .step2{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1 forwards;}}
     }
     &[step-state='3']{
-        .step1{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1;}}
-        .step2{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1;}}
-        .step3{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1;}}
+        .step1{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1 forwards;}}
+        .step2{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1 forwards;}}
+        .step3{ opacity: 1; .fateIn{ animation: fateInOrange .5s ease 1 forwards;}}
+    }
+    // Slider 3 Transition
+    &[slide-state='3']{
+        .page .ejercicio{
+            .marco{
+                > div{
+                    transition: none;
+                &:hover{
+                    transform: scale(1.1);
+                }
+                }
+            }
+        }
+        &[step-state='1']{
+            .page .ejercicio{
+                .marco{
+                    > div{
+                        transition: transform .2s ease;
+    }   }   }   }   }
+    // Slider 4 Transition  Property
+    &[slide-state='4']{
+        .page .ejercicio .marco{
+            > div{
+                transition: all 1s ease 0s;
+                position: relative;
+            }
+            > div:hover{
+                background-color: #c58d1d;
+                transform: scale(1.5);
+                opacity: 0.5;
+                z-index: 1;
+            }
+            .header-box{ &::before{content:'background';} transition-property: background-color; }
+            .sider-box{ &::before{content:'transform'; }  transition-property: transform;}
+            .content-box{ &::before{content:'opacity'; }  transition-property: opacity;}
+            .content-foot-box{ &::before{content:'all';}  transition-property: all;}
+        }
+    }
+    
+    &[slide-state='7'],  &[slide-state='6'],  &[slide-state='5']{
+        .page .ejercicio .marco{
+            > div{
+                transition: all 1s ease 0s;
+                position: relative;
+            }
+            > div:hover{
+                background-color: #c58d1d;
+                transform: scale(1.5);
+                opacity: 0.5;
+                z-index: 1;
+            }
+        }
+    }
+
+    // Slider 5 Transition  Property
+      &[slide-state='5']{
+        .page .ejercicio .marco{
+            .header-box{ &::before{content:'1s';} transition-duration: 1s; }
+            .sider-box{ &::before{content:'2s'; }  transition-duration: 2s;}
+            .content-box{ &::before{content:'3s'; }  transition-duration: 3s;}
+            .content-foot-box{ &::before{content:'4s';}  transition-duration: 4s;}
+        }
+    }
+
+     // Slider 6 Transition  Property
+     &[slide-state='6']{
+        .page .ejercicio .marco{
+            .header-box{ &::before{content:'1s';} transition-delay: 1s; }
+            .sider-box{ &::before{content:'2s'; }  transition-delay: 2s;}
+            .content-box{ &::before{content:'3s'; }  transition-delay: 3s;}
+            .content-foot-box{ 
+                &::before{
+                    content:'4s - .5s';
+                }
+                transition-delay: .5s; 
+                &:hover {
+                    transition-delay: 4s;
+                }
+            }
+        }
+    }
+
+     // Slider 7 Transition  Property
+     &[slide-state='7']{
+        .page .ejercicio .marco{
+            .header-box{ &::before{content:'linear';} transition-timing-function: linear; }
+            .sider-box{ &::before{content:'ease'; }  transition-timing-function: ease;}
+            .content-box{ &::before{content:'cubic-bezier(.37,-0.72,.74,1.52)'; }  transition-timing-function:cubic-bezier(.37,-0.72,.74,1.52);}
+            .content-foot-box{ &::before{ content:'step-start'; } transition-timing-function: step-start; }
+        }
+    }
+
+    // sldier 9 
+    &[slide-state='9']{
+        .page .ejercicio .marco{
+
+            .content-box{ 
+                &::before{
+                    content:'steps()'; 
+                    color: #000;
+                    top: 0;
+                }
+                position: relative;
+                background-color: #fff;
+                background-image: url(images/luigi.png);
+                background-size: auto 100%;
+                background-position-x: 0%;
+                transition: background-position-x .1s steps(2);
+                &:hover{
+                    background-position-x: 100%;
+                }
+            }
+        }
+    }
+
+    // slider 10
+    &[slide-state='10']{
+        .page .ejercicio .marco{
+
+        }
+        &[step-state='1']{
+            .page .ejercicio .marco{
+                > div{
+                    animation: electro 2s linear .1s infinite normal both;
+                }
+                .header-box{ animation-delay: .5s; }
+                .sider-box{ animation-duration: 3s; }
+                .content-box{ animation-direction: alternate; }
+                .content-foot-box{   animation-direction: reverse; }
+            }
+        }
     }
     .page{
         position: relative;
@@ -43,11 +183,14 @@ body{
             min-height: 100vh;
             height: 100%;
             .sliders{
-                padding: 20px;
+                padding: 15px;
                 min-height: 100vh;
-                border-bottom: 1px solid rgb(245, 176, 28);
+                // border-bottom: 1px solid $orange;
                 img{
                     max-width: 100%;
+                }
+                span{
+                    font-size: 0.8em;
                 }
                 &.historyCSS{
                     text-align: center;
@@ -56,16 +199,19 @@ body{
                         display: block;
                         width: 100%;
                         height: auto;
-                        max-width: 300px;
                         margin: 0 auto;
+                        max-width: 450px;
                         transition: transform .5s ease;
+                        @media all and (max-width : 900px){
+                            max-width: 300px;
+                        }
                     }
                     &.active{
                         img:first-of-type{
-                            transform: translateX(50vw) translateY(110px);
+                            transform: translateX(50vw) translateY(100px);
                         }
                         img:last-of-type{
-                            transform: translateY(-100px);
+                            transform: translateY(-120px);
                         }
                     }
                 }
@@ -85,14 +231,31 @@ body{
                         h3{
                             opacity: 0.9;
                             font-weight: bold;
+                            margin: 5px auto;
                         }
                         p{
                             font-size: 1.3em;
                             margin: 6px auto;
                             width: 80%;
-                            border: 1px solid #c58d1d;
+                            border: 1px solid $orange;
                             border-radius: 10px;
                             padding: 5px;
+                            font-weight: bold;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+                &.cubic-bez{
+                    text-align: center;
+                    .toRight{
+                        position: absolute;
+                        width: 45vw;
+                        transform: translateY(-200px);
+                        transition: transform .5s ease 0s;
+                    }
+                    &.active{
+                        .toRight{
+                            transform: translateX(40vw) translateY(-200px);
                         }
                     }
                 }
@@ -110,7 +273,9 @@ body{
                 top: 0;
                 right: 0;
                 opacity: 1;
-                transition: opacity 1s ease;
+                visibility: visible;
+                transition: opacity 1s ease , opacity 1s ease , visibility 1s ease;
+                padding-top: calc(50vh - 202px);
                 > div{
                     border: 1px solid #f6f6f6;
                     margin: 1%;
@@ -121,12 +286,18 @@ body{
                     border-radius: 10px;
                     box-shadow: 0 0 5px #2f2f2f;
                     transition: transform .2s ease;
-                    &:hover{
-                        transform: scale(1.1);
+                   
+                    &:before{
+                        position: absolute;
+                        top: 40%;
+                        color: #fff;
+                        height: 40px;
+                        width: 100%;
+                        left: 0;
                     }
                     &.header-box, &.content-foot-box{
                         width: 97%;
-                        height: 90px;
+                        height: 70px;
                         background-color: #028090;
                     }
                    &.footer-box{
@@ -136,18 +307,20 @@ body{
                     }
                     &.sider-box{
                         width: 27%;
-                        height: 260px;
+                        height: 230px;
                         background-color: #EE4061;
                     }
                     &.content-box{
                         width: 67%;
-                        height: 260px;
+                        height: 230px;
                         background-color: #01A896;
                     }
                 }
             }
-            [pt-state='0'], [pt-state='1'], [pt-state='2']{
+            [pt-state='0'], [pt-state='1'], [pt-state='2'], [pt-state='8']{
                 opacity: 0;
+                visibility: hidden;
+               
             }
             $estates : ( 0 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
                         ( 1 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
@@ -155,7 +328,12 @@ body{
                           ( 3 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
                            ( 4 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
                             ( 5 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
-                             ( 6 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),;
+                             ( 6 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                               ( 7 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                                 ( 8 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                                  ( 9 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                                    ( 10 , '' , '' , '' , '' , '' , '' , '' , '' , '' , ''),
+                                      ( 11 , '' , '' , '' , '' , '' , '' , '' , '' , '' , '');
 
             @each  $nameSlide, $header-ani, $header-trans,
                 $content-ani, $content-trans, $footer-ani, $footer-trans,
@@ -200,6 +378,14 @@ body{
 // Animations
 
 @keyframes fateInOrange{
-    from{ background-color: #c58d1d; }
-    to{ background-color: transparent; }
+    from{ background-color: transparent; }
+    to{ background-color: #c58d1d; color: #fff;  }
 }
+@keyframes electro{
+    25%{ background-color: #1f76b1; transform: scale(1); opacity: 1;}
+    75%{ background-color: #c58d1d; transform: scale(1.2); opacity: 0.5;}
+    100%{ background-color: #c51da9; transform: scale(1); opacity: 1;}
+}
+
+                
+                
