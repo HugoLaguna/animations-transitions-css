@@ -432,10 +432,10 @@ body[slide-state="15"][step-state="1"] .page .ejercicio .marco .content-foot-box
 }
 body[slide-state="18"] .page .teoria .final .text {
   opacity: 0;
-  transform: translateX(20vw) translateY(-42%);
+  transform: translateX(53vw) translateY(-50%);
   margin-left: -30px;
   height: 70vh;
-  width: 100vw;
+  width: 50vw;
 }
 body[slide-state="18"]:not([step-state="0"]) .page .teoria .final .text {
   opacity: 1;
@@ -806,6 +806,7 @@ body .page .ejercicio .marco[pt-state="19"]:before {
   0% {
     font-size: 0px;
     transform: rotate(90deg);
+    opacity: 0;
   }
   5% {
     font-size: 60px;
@@ -813,10 +814,10 @@ body .page .ejercicio .marco[pt-state="19"]:before {
   10% {
     font-size: 77px;
     transform: rotate(0deg);
+    opacity: 1;
   }
   60% {
     font-size: 77px;
-    opacity: 1;
   }
   71% {
     opacity: 0;

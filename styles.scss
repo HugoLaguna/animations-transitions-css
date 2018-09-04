@@ -356,10 +356,10 @@ body{
         .page .teoria .final{
             .text {
                  opacity: 0;
-                 transform: translateX(20vw) translateY(-42%);
+                 transform: translateX(53vw) translateY(-50%);
                  margin-left: -30px;
                  height: 70vh;
-                 width: 100vw;
+                 width: 50vw;
                 }
         }
         &:not([step-state='0']){
@@ -635,6 +635,7 @@ to{ background-color: #FF0; }
     0% {
       font-size:0px;
       transform:rotate(90deg);
+      opacity: 0;      
     }
     5% {
       font-size:60px;
@@ -643,10 +644,10 @@ to{ background-color: #FF0; }
     10% {
       font-size:77px;
       transform:rotate(0deg);
+      opacity: 1;
     }
     60% {
-      font-size:77px;
-      opacity: 1; 
+      font-size:77px; 
     }
     71% {
       opacity: 0;
