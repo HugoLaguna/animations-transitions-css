@@ -328,7 +328,7 @@ body{
         &[step-state='1']{
             .page .ejercicio .marco{
                 > div {
-                    animation:  animation-test-2 3.5s ease 1; 
+                    animation:  animation-test-2 3.5s ease 1s 1; 
                 }
                 .header-box{ &::before{content:'none';} animation-fill-mode: none; }
                 .sider-box{ &::before{content:'fowards'; } animation-fill-mode: forwards; }
@@ -337,7 +337,7 @@ body{
             }
         }
     }
-    
+
     &[slide-state='15']{
         &[step-state='1']{
             .page .ejercicio .marco{

@@ -376,6 +376,33 @@ body[slide-state="17"][step-state="1"] .page .ejercicio .marco .content-box:hove
 body[slide-state="17"][step-state="1"] .page .ejercicio .marco .header-box, body[slide-state="17"][step-state="1"] .page .ejercicio .marco .content-foot-box {
   animation: none;
 }
+body[slide-state="16"][step-state="1"] .page .ejercicio .marco > div {
+  animation: animation-test-2 3.5s ease 1s 1;
+}
+body[slide-state="16"][step-state="1"] .page .ejercicio .marco .header-box {
+  animation-fill-mode: none;
+}
+body[slide-state="16"][step-state="1"] .page .ejercicio .marco .header-box::before {
+  content: "none";
+}
+body[slide-state="16"][step-state="1"] .page .ejercicio .marco .sider-box {
+  animation-fill-mode: forwards;
+}
+body[slide-state="16"][step-state="1"] .page .ejercicio .marco .sider-box::before {
+  content: "fowards";
+}
+body[slide-state="16"][step-state="1"] .page .ejercicio .marco .content-box {
+  animation-fill-mode: backwards;
+}
+body[slide-state="16"][step-state="1"] .page .ejercicio .marco .content-box::before {
+  content: "backwards";
+}
+body[slide-state="16"][step-state="1"] .page .ejercicio .marco .content-foot-box {
+  animation-fill-mode: both;
+}
+body[slide-state="16"][step-state="1"] .page .ejercicio .marco .content-foot-box::before {
+  content: "both";
+}
 body[slide-state="15"][step-state="1"] .page .ejercicio .marco > div {
   animation: animation-test-2 2.5s ease infinite;
 }
@@ -401,33 +428,6 @@ body[slide-state="15"][step-state="1"] .page .ejercicio .marco .content-foot-box
   animation-direction: alternate-reverse;
 }
 body[slide-state="15"][step-state="1"] .page .ejercicio .marco .content-foot-box::before {
-  content: "alternate-reverse";
-}
-body[slide-state="16"][step-state="1"] .page .ejercicio .marco > div {
-  animation: animation-test-2 2.5s ease infinite;
-}
-body[slide-state="16"][step-state="1"] .page .ejercicio .marco .header-box {
-  animation-direction: alternate;
-}
-body[slide-state="16"][step-state="1"] .page .ejercicio .marco .header-box::before {
-  content: "alternate";
-}
-body[slide-state="16"][step-state="1"] .page .ejercicio .marco .sider-box {
-  animation-direction: normal;
-}
-body[slide-state="16"][step-state="1"] .page .ejercicio .marco .sider-box::before {
-  content: "normal";
-}
-body[slide-state="16"][step-state="1"] .page .ejercicio .marco .content-box {
-  animation-direction: reverse;
-}
-body[slide-state="16"][step-state="1"] .page .ejercicio .marco .content-box::before {
-  content: "reverse";
-}
-body[slide-state="16"][step-state="1"] .page .ejercicio .marco .content-foot-box {
-  animation-direction: alternate-reverse;
-}
-body[slide-state="16"][step-state="1"] .page .ejercicio .marco .content-foot-box::before {
   content: "alternate-reverse";
 }
 body[slide-state="18"] .page .teoria .final .text {
