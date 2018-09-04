@@ -323,6 +323,21 @@ body{
             }
         }
     }
+  
+    &[slide-state='16']{
+        &[step-state='1']{
+            .page .ejercicio .marco{
+                > div {
+                    animation:  animation-test-2 3.5s ease 1; 
+                }
+                .header-box{ &::before{content:'none';} animation-fill-mode: none; }
+                .sider-box{ &::before{content:'fowards'; } animation-fill-mode: forwards; }
+                .content-box{ &::before{content:'backwards'; }  animation-fill-mode: backwards; }
+                .content-foot-box{ &::before{content:'both';} animation-fill-mode: both; }
+            }
+        }
+    }
+    
     &[slide-state='15']{
         &[step-state='1']{
             .page .ejercicio .marco{
@@ -336,19 +351,7 @@ body{
             }
         }
     }
-    &[slide-state='16']{
-        &[step-state='1']{
-            .page .ejercicio .marco{
-                > div {
-                    animation:  animation-test-2 2.5s ease infinite; 
-                }
-                .header-box{ &::before{content:'alternate';} animation-direction: alternate; }
-                .sider-box{ &::before{content:'normal'; } animation-direction: normal; }
-                .content-box{ &::before{content:'reverse'; }  animation-direction: reverse; }
-                .content-foot-box{ &::before{content:'alternate-reverse';} animation-direction: alternate-reverse; }
-            }
-        }
-    }
+
     &[slide-state='18']{
         .page .teoria .final{
             .text {
